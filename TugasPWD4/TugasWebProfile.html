@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+  <style>
+   body{
+    box-sizing:border-box;
+	margin:0;
+	padding:0;
+	height:1000vh;
+   }
+   .first_head ul{
+    position:fixed;
+	top:-15px;
+    display:flex;
+	list-style:none outside none;
+	background-color:rgba(0, 0, 0, 0.8);
+	align-items:center;
+	height:3rem;
+	width:100%;
+	border:0.5px solid #333;
+   }
+   .list .link ul{
+    display:flex;
+	position:relative;
+	top:-35px;
+	height:0;
+	list-style:circle outside none;
+	gap:4rem;
+	font-weight:bold;
+	justify-content:center;
+
+   }
+   .list .link ul li a{
+    color:#333;
+	font-size:large;
+	font-family:Arial, Helvetica, sans-serif;
+	text-decoration:none;
+   }
+   .list .link ul li:first-child{
+    list-style-type:none;
+   }
+   .list .link ul li:nth-child(2), .list .link ul li:nth-child(5){
+    width:120px;
+   }
+   .list .link ul li a:hover{
+    color:gold;
+   }
+   .list .logo{
+    background-color:#fff;
+	padding:0 0 0 35%;
+   }
+   .list{
+    position:fixed;
+	top:8%;
+	padding:0 15%;
+	background-color:#fff;
+   }
+   main{
+    padding:253px 0 0 0;
+   }
+   .Konten .atas ul{
+    display:flex;
+	list-style:none outside none;
+	border-bottom:0.5px solid #333;
+   }
+   .Konten .atas ul li:nth-child(2){
+    padding:0 0 0.9rem 80%;
+   }
+   .Konten .tengah{
+    display:grid;
+	grid-template-rows:repeat(10, 100px);
+	grid-template-columns:repeat(12, 100px);
+   }
+   .wadah{
+    z-index:-1;
+   }
+   .w1{
+    grid-area: 1/3/4/6;
+	border-left:1px solid #333;
+	border-top:1px solid #333;
+   }
+   .w2{
+    grid-area:1/6/4/9;
+	border-top:1px solid #333;
+   }.w3{
+    grid-area:1/9/4/12;
+	border-top:1px solid #333;
+	border-right:1px solid #333;
+   }.w4{
+    grid-area:4/3/7/6;
+	border-top:1px solid #333;
+	border-left:1px solid #333;
+	border-bottom:1px solid #333;
+   }.w5{
+    grid-area:4/6/7/9;
+	border-top:1px solid #333;
+	border-bottom:1px solid #333;
+   }.w6{
+    grid-area:4/9/7/12;
+	border-top:1px solid #333;
+	border-right:1px solid #333;
+	border-bottom:1px solid #333;
+   }
+   .wadah .main-content{
+    text-decoration:underline;
+	list-style:cirle none none;
+	position:relative;
+	top:25px;
+	left:15px;
+   }
+   .wadah .bgcolor{ 
+    position:relative;
+	left:10%;
+	top:65px;
+    background-color:lightgreen;
+	height:8px;
+	width:80%;
+   }
+   .wadah .inform{
+    position:relative;
+	left:-10px;
+	top:65px;
+   }
+   .wadah .inform  ul{
+    list-style:none outside none;
+   }
+   .wadah .inform ul li:first-child{
+    text-align:right;
+   }
+   .status{
+    position:relative;
+	right:30%;
+	z-index:-1;
+   }
+   .status .satu ul, .status .dua ul, .status .tiga ul{
+    display:flex;
+	justify-content:space-between;
+	width:116%;
+   }
+   .status .satu{
+    color:lightgreen;
+   }
+   .status .dua{
+    color:brown;
+   }
+   .status .tiga{
+    color:red;
+   }
+   span{
+    color:#000;
+   }
+   .bagian_atas ul{
+    column-count:2;
+	background-color:#00a6b5;
+	wrap:nowrap;
+	list-style-type:none;
+	height:300px;;	
+   }
+   .bagian_atas .List ul{
+	padding-top:40px;
+    display:flex;
+	gap:22px;
+	height:50px;
+	flex-wrap:nowrap;
+	justify-content:center;
+	
+   }
+   .bagian_atas .context{
+    padding:10% 0 0 0;
+	color:#fff;
+	font-size:12px;
+   }
+   .bagian_atas .List ul li a{
+    text-decoration:none;
+	color:#fff;
+   }
+   .bagian_atas .List .text{
+    padding:80px 0 0 150px;
+   }
+   .bagian_atas .List .logo_brand{
+    top:100px;
+    gap:3rem;
+   }
+   .bagian_tengah{
+    position:relative;
+	top:-16px;
+    background-color:#08909c;
+    color:#fff;
+	height:30px;
+	z-index:-1;
+	padding:30px 0 0 25px;
+	text-align:left;
+	font-size:12px;
+   }
+   .bagian_bawah{
+    position:relative;
+	top:-35px;
+    background-color:#808080;
+	height:90px;
+	text-align:left;
+	z-index:-1;
+	font-size:12px;
+	padding:50px 0 0 25px;
+	color:#fff;
+   }
+   .bagian_bawah a{
+    color:#fff;
+	text-decoration:none;
+	font-weight:bold;
+	font-size:15px;
+   }
+   
+  </style>
+ </head>
+ 
+ <body>
+  <header>
+   <nav class="first_head">
+    <ul>
+	 <li><a href="">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+  <rect height="20" rx="5" ry="5" width="20" x="2" y="2" />
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+</svg>
+
+	 </a></li>
+	 <li><a href="">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+  <rect height="12" width="4" x="2" y="9" />
+  <circle cx="4" cy="4" r="2" />
+</svg>
+
+	 </a></li>
+	 <li><a href="">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon" fill="none">
+  <path d="m17.543 13.398.661-4.31h-4.136V6.29c0-1.18.578-2.329 2.43-2.329h1.88V.291S16.673 0 15.042 0c-3.407 0-5.633 2.064-5.633 5.802v3.285H5.622v4.311h3.786v10.42a15.015 15.015 0 0 0 4.66 0v-10.42h3.475Z" fill="#1877F2" />
+</svg>
+	 </a></li>
+	 <li><a href="">
+	  
+	 </a></li>
+	 <li><a href=""></a></li>
+	 
+	</ul>
+   </nav>
+   
+   <div class="list">
+    <div class="logo">
+     <img src="C:\Users\ASUS\Documents\Gambar Dari Internet\Kapal Api Group.jpg" alt="Gambar Logo" height=140px width=340px>
+    </div>
+    <nav class="link">
+	 <ul>
+	  <li><a href="">Home</a></li>
+	  <li><a href="">Our Bussines</a></li>
+	  <li><a href="">Abouts</a></li>
+	  <li><a href="">Career</a></li>
+	  <li><a href="">Media Center</a></li>
+	  <li><a href="">Contact</a></li>
+	  <li><a href=""></a></li>
+	 </ul>
+	</nav>
+   </div>
+  </header>
+  <main>
+   <div class="Konten">
+    <div class="atas">
+	 <form>
+	  <ul>
+	   <li>PageSpeed Insight</li>
+	   <li><button>Docs</button></li>
+	   <li><button>Copy link</button></li>
+	  </ul>
+	 </form>	 
+	</div>
+	<div class="tengah">
+	 <div class="tengah wadah">
+	  <div class="w1">
+	   <li class="main-content">
+	    Largest Contentful Paint (LCP) 
+	   </li>
+	   <div class="bgcolor"></div>
+	   <div class="inform">
+	    <ul>
+		 <li>page Loads</li>
+		 <li>
+		  <div class="status">
+		   <ul>
+		    <li>
+			 <div class="satu">
+			  <ul>
+			   <li>Good<span> (<= 100 ms)</span></li>
+			   <li><span>100%</span></li>
+			  </ul>
+			 </div>
+			</li>
+			<li>
+			 <div class="dua">
+			  <ul>
+			   <li>Need Improvement<span> (<= 100 ms)</span></li>
+			   <li><span>0%</span></li>
+			  </ul>
+			 </div>
+			</li>
+			<li>
+			 <div class="tiga">
+			  <ul>
+			   <li>Poor<span> (<= 0 ms)</span></li>
+			   <li><span>0%</span></li>
+			  </ul>
+			 </div>
+			</li>
+		   </ul>
+		  </div>
+	   </div>
+	  </div>
+	  <div class="w2">
+	    <li class="main-content">
+	     First Input Delay (FID)
+		</li>
+		<div class="bgcolor"></div>
+		<div class="inform">
+	    <ul>
+		 <li>page Loads</li>
+		 <li>
+		  <div class="status">
+		   <ul>
+		    <li>
+			 <div class="satu">
+			  <ul>
+			   <li>Good<span> (<= 100 ms)</span></li>
+			   <li><span>100%</span></li>
+			  </ul>
+			 </div>
+			</li>
+			<li>
+			 <div class="dua">
+			  <ul>
+			   <li>Need Improvement<span> (<= 100 ms)</span></li>
+			   <li><span>0%</span></li>
+			  </ul>
+			 </div>
+			</li>
+			<li>
+			 <div class="tiga">
+			  <ul>
+			   <li>Poor<span> (<= 0 ms)</span></li>
+			   <li><span>0%</span></li>
+			  </ul>
+			 </div>
+			</li>
+		   </ul>
+		  </div>
+		</div>
+	  </div>
+	  <div class="w3">
+	    <li class="main-content">
+	     Cumulative Layout Shift (CLS)
+		</li>
+		<div class="bgcolor"></div>
+		<div class="inform">
+	    <ul>
+		 <li>page Loads</li>
+		 <li>
+		  <div class="status">
+		   <ul>
+		    <li>
+			 <div class="satu">
+			  <ul>
+			   <li>Good<span> (<= 100 ms)</span></li>
+			   <li><span>100%</span></li>
+			  </ul>
+			 </div>
+			</li>
+			<li>
+			 <div class="dua">
+			  <ul>
+			   <li>Need Improvement<span> (<= 100 ms)</span></li>
+			   <li><span>0%</span></li>
+			  </ul>
+			 </div>
+			</li>
+			<li>
+			 <div class="tiga">
+			  <ul>
+			   <li>Poor<span> (<= 0 ms)</span></li>
+			   <li><span>0%</span></li>
+			  </ul>
+			 </div>
+			</li>
+		   </ul>
+		  </div>
+		</div>
+	  </div>
+	  <div class="w4">
+	    <li class="main-content">
+		 First Contentful Paint (LCP)
+		</li>
+		<div class="bgcolor"></div>
+		<div class="inform">
+	    <ul>
+		 <li>page Loads</li>
+		 <li>
+		  <div class="status">
+		   <ul>
+		    <li>
+			 <div class="satu">
+			  <ul>
+			   <li>Good<span> (<= 100 ms)</span></li>
+			   <li><span>100%</span></li>
+			  </ul>
+			 </div>
+			</li>
+			<li>
+			 <div class="dua">
+			  <ul>
+			   <li>Need Improvement<span> (<= 100 ms)</span></li>
+			   <li><span>0%</span></li>
+			  </ul>
+			 </div>
+			</li>
+			<li>
+			 <div class="tiga">
+			  <ul>
+			   <li>Poor<span> (<= 0 ms)</span></li>
+			   <li><span>0%</span></li>
+			  </ul>
+			 </div>
+			</li>
+		   </ul>
+		  </div>
+		</div>
+	  </div>
+	  <div class="w5">
+	    <li class="main-content">
+	     Interaction to Next Paint (INP)
+		</li>
+		<div class="bgcolor"></div>
+		<div class="inform">
+	    <ul>
+		 <li>page Loads</li>
+		 <li>
+		  <div class="status">
+		   <ul>
+		    <li>
+			 <div class="satu">
+			  <ul>
+			   <li>Good<span> (<= 100 ms)</span></li>
+			   <li><span>100%</span></li>
+			  </ul>
+			 </div>
+			</li>
+			<li>
+			 <div class="dua">
+			  <ul>
+			   <li>Need Improvement<span> (<= 100 ms)</span></li>
+			   <li><span>0%</span></li>
+			  </ul>
+			 </div>
+			</li>
+			<li>
+			 <div class="tiga">
+			  <ul>
+			   <li>Poor<span> (<= 0 ms)</span></li>
+			   <li><span>0%</span></li>
+			  </ul>
+			 </div>
+			</li>
+		   </ul>
+		  </div>
+		</div>
+	  </div>
+	  <div class="w6">
+	    <li class="main-content">
+		 Time to First Byte (TTFB)
+		</li>
+		<div class="bgcolor"></div>
+		<div class="inform">
+	    <ul>
+		 <li>page Loads</li>
+		 <li>
+		  <div class="status">
+		   <ul>
+		    <li>
+			 <div class="satu">
+			  <ul>
+			   <li>Good<span> (<= 100 ms)</span></li>
+			   <li><span>100%</span></li>
+			  </ul>
+			 </div>
+			</li>
+			<li>
+			 <div class="dua">
+			  <ul>
+			   <li>Need Improvement<span> (<= 100 ms)</span></li>
+			   <li><span>0%</span></li>
+			  </ul>
+			 </div>
+			</li>
+			<li>
+			 <div class="tiga">
+			  <ul>
+			   <li>Poor<span> (<= 0 ms)</span></li>
+			   <li><span>0%</span></li>
+			  </ul>
+			 </div>
+			</li>
+		   </ul>
+		  </div>
+		</div>
+	  </div>
+	 </div>
+	</div>
+	<div class="bawah">
+	</div>
+   </div>
+  </main>
+  <footer>
+   <div class="bagian_atas">
+    <ul>
+	 <li>
+	  <div class="logo_bca">
+	   <img src="C:\Users\ASUS\Documents\TugasPWD\logo_bca.svg" alt="Gambar BCA" height=50px width=200px>
+	  </div>
+	 </li>
+	 <li>
+	  <div class="context">
+	   BCA Digital berizin dan di oleh Otoritas Jasa Keuangan.<br>
+	   BCA Digital merupakan peserta pinjaminan LPS.<br>
+	  </div>
+	 </li>
+	 <li>
+	  <div class="List">
+	   <ul class="text">
+	     <li><a href="">Profil</a></li>
+		 <li><a href ="">Tata Kelola</a></li>
+		 <li><a href="">Laporan</a></li>
+		 <li><a href="">Kontak</a></li>
+	   </ul>
+	   <ul class="logo_brand">
+		<li><img src="C:\Users\ASUS\Documents\TugasPWD\ic-twitter.png" alt="X" height=22px width=22px></li>
+		<li><img src="C:\Users\ASUS\Documents\TugasPWD\instagram.png" alt="instagram"></li>
+		<li><img src="C:\Users\ASUS\Documents\TugasPWD\tiktok.png" alt="tiktok"></li>
+		<li><img src="C:\Users\ASUS\Documents\TugasPWD\youtube.png" alt="youtube"></li>
+		<li><img src="C:\Users\ASUS\Documents\TugasPWD\linkedln.png" alt="linkedln"></li>
+		<li><img src="C:\Users\ASUS\Documents\TugasPWD\facebook.png" alt="facebook"></li>
+	   </ul>
+	  </div>
+	 </li>
+	</ul>
+   </div>
+   <div class="bagian_tengah">Terima kasih sudah mampir! Laman ini lebih nyaman dinikmati di ponsel pintar. Coba sekarang untuk pengalaman yang lebih maksimal.</div><br>
+   <div class="bagian_bawah">Nilai simpanan maksimum yang dijamin oleh LPS sebesar Rp 2.000.000.000 (dua miliar rupiah)<br>
+dengan tingkat bunga penjaminan maksimum sebesar 4.25% (empat koma dua lima persen) untuk rupiah sesuai ketentuan yang berlaku. Klik <a href="">disini</a> untuk mengunduh bukti kepesertaan kami.</div>
+  </footer>
+ </body>
+</html>
